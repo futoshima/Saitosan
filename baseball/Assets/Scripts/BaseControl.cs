@@ -26,9 +26,16 @@ public class BaseControl : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            //各パラメータの初期か.
+            runner.running = false;
+            runner.back = false;
+            if (this.gameObject.name == "Home") runner.on_base = 0;
+            if (this.gameObject.name == "Base") runner.on_base = 1;
+            if (this.gameObject.name == "Base (1)") runner.on_base = 2;
+            if (this.gameObject.name == "Base (2)") runner.on_base = 3;
             //ベースに接触したら走るのをやめる.
-            runner.run = false;
+            if (runner.on_base!=0)runner.run = false;    //プレイヤーが最初ホームにいる時を除く.
+            //if (runner.on_base == 4) runner.on_base = 0;
         }
-        Debug.Log("run");
     }
 }

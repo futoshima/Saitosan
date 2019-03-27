@@ -438,6 +438,8 @@ MonoBehaviour:
   vx: 5
   vy: 5
   run: 0
+  running: 0
+  back: 0
 --- !u!136 &2123112382
 CapsuleCollider:
   m_ObjectHideFlags: 0
